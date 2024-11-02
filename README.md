@@ -1,3 +1,9 @@
+# Context
+
+Comme d'hab, je créer des repos avec pas grand chose dedans, mais là c'est pour approfondir mes compétences DevOps. J'voulais m'essayer un peu à kubernetes, j'ai essayé en local, mais je me disais que ça serait quand même plus amusant si c'était sur un VPS.
+
+*Les notes qui vont suivre n'ont pas forcément beaucoup de sens, c'est juste le fruit de mes réflexions, les ressources que j'ai utilisés pour apprendre,...*
+
 # Kubernetes Learning
 
 Après des heures à tenter de créer une vm dans wsl avec kvm, les problèmes engendrés, je fini par lancer le driver en mode docker, parce que j'avais pas compris comment ça allait se faire avant. En fait on peut utiliser docker comme "hyperviseur", permettant de ne pas avoir à s'embêter avec du KVM.
