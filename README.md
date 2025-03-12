@@ -1,6 +1,6 @@
 # Context
 
-Comme d'hab, je créer des repos avec pas grand chose dedans, mais là c'est pour approfondir mes compétences DevOps. J'voulais m'essayer un peu à kubernetes, j'ai essayé en local, mais je me disais que ça serait quand même plus amusant si c'était sur un VPS.
+Comme d'hab, je créer des repos avec pas grand chose dedans, mais là c'est pour approfondir mes compétences DevOps. J'voulais m'essayer un peu à kubernetes, j'ai essayé en local, mais je me disais que ça serait quand même plus amusant si c'était sur un VPS. *Puis parce que le Raspberry Pi 3B+ a pas trop aimé docker XD*
 
 *Les notes qui vont suivre n'ont pas forcément beaucoup de sens, c'est juste le fruit de mes réflexions, les ressources que j'ai utilisés pour apprendre,...*
 
@@ -31,3 +31,5 @@ Pour rentrer dans un pod `` kubectl exec -it <POD> -- bash``
 Dans les secrets générator, on spécifie les éléments (fichiers) qui ont accès au generator.
 
 La commande describe affiche des morceaux de logs.
+
+``kubectl logs <pod name>``
