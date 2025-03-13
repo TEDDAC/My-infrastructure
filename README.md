@@ -2,7 +2,7 @@
 
 Comme d'hab, je créer des repos avec pas grand chose dedans, mais là c'est pour approfondir mes compétences DevOps. J'voulais m'essayer un peu à kubernetes, j'ai essayé en local, mais je me disais que ça serait quand même plus amusant si c'était sur un VPS. *Puis parce que le Raspberry Pi 3B+ a pas trop aimé docker XD*
 
-*Les notes qui vont suivre n'ont pas forcément beaucoup de sens, c'est juste le fruit de mes réflexions, les ressources que j'ai utilisés pour apprendre,...*
+*Les notes qui vont suivrent n'ont pas forcément beaucoup de sens, c'est juste le fruit de mes réflexions, les ressources que j'ai utilisés pour apprendre,...*
 
 # Kubernetes Learning
 
