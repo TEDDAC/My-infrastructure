@@ -8,7 +8,7 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: nginx # 🔥 Correspond aux labels des Pods gérés
   template:
     metadata:
       labels:
@@ -35,7 +35,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: nginx
+    app: nginx # 🔥 Sélectionne les pods avec ce label
   ports:
   - name: port-web
     protocol: TCP
