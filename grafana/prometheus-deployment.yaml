@@ -45,24 +45,24 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    namespace: grafana
-    app: prometheus
+    # ON NE MET PAS LES NAMESPACES EN SELECTOR
+    app: prometheus # 🔥 Sélectionne les pods avec ce label
   ports:
   - name: prometheus-port-cluster-ip
     protocol: TCP
     port: 9090
     targetPort: prometheus-port
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: prometheus-load-balancer
-  namespace: grafana
-spec:
-  type: LoadBalancer
-  selector:
-    app: prometheus # 🔥 Sélectionne les pods avec ce label
-  ports:
-  - protocol: TCP
-    port: 9090
-    targetPort: prometheus-port
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: prometheus-load-balancer
+#   namespace: grafana
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     app: prometheus # 🔥 Sélectionne les pods avec ce label
+#   ports:
+#   - protocol: TCP
+#     port: 9090
+#     targetPort: prometheus-port
