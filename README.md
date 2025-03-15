@@ -33,3 +33,7 @@ Dans les secrets générator, on spécifie les éléments (fichiers) qui ont acc
 La commande describe affiche des morceaux de logs.
 
 ``kubectl logs <pod name>``
+
+## DNS
+
+Les nom de domaines des services ont la forme ``<service>.<namespace>.svc.cluster.local``. Exemple: ``prometheus-cluster-ip.grafana.svc.cluster.local``

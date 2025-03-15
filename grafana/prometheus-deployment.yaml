@@ -36,6 +36,7 @@ spec:
         ports:
         - name: prometheus-port
           containerPort: 9090
+# TODO: Binding for conf (and data ?)
 ---
 apiVersion: v1
 kind: Service
