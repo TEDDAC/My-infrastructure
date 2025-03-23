@@ -77,9 +77,10 @@ metadata:
   name: grafana
   namespace: grafana
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 3000
+    name: grafana-port
     protocol: TCP
     targetPort: http-grafana
   selector:
