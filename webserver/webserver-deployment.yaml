@@ -55,17 +55,3 @@ spec:
     requests:
       storage: 50M
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-loadbal
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx # 🔥 Sélectionne les pods avec ce label
-  ports:
-  - name: port-web
-    protocol: TCP
-    port: 81
-    targetPort: 80
----

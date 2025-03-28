@@ -19,12 +19,29 @@ spec:
       containers:
       - name: traefik
         image: traefik:v3.3
+        envFrom:
+        - configMapRef:
+            name: traefik-config-map
         args:
         - --api.insecure
+        - --accesslog
+        - --entryPoints.web.Address=:80
+        - --entryPoints.websecure.Address=:443
+        - --providers.kubernetescrd
         - --providers.kubernetesingress
+        # ACME V2 supports wildcard certificates. As described in Let's Encrypt's post wildcard certificates can only be generated through a DNS-01 challenge.
+        - --certificatesresolvers.myresolver.acme.dnschallenge
+        - --certificatesresolvers.myresolver.acme.dnschallenge.provider=infomaniak
+        - --certificatesresolvers.myresolver.acme.email=mathisribemont@gmail.com
+        - --certificatesresolvers.myresolver.acme.storage=acme.json
+        # Please note that this is the staging Let's Encrypt server.
+        # Once you get things working, you should remove that whole line altogether.
+        # - --certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
         ports:
         - name: web
           containerPort: 80
+        - name: websecure
+          containerPort: 443
         - name: dashboard
           containerPort: 8080
 ---
@@ -47,7 +64,11 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - port: 80
+  - name: web
+    port: 80
     targetPort: web
+  - name: websecure
+    port: 443
+    targetPort: websecure
   selector:
     app: traefik
