@@ -25,10 +25,13 @@ spec:
         args:
         - --api.insecure
         - --accesslog
+        # Define entry
         - --entryPoints.web.Address=:80
         - --entryPoints.websecure.Address=:443
+        # redirect all requests to websecure and force https
         - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
         - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+        # Prodiders of configuration
         - --providers.kubernetescrd
         - --providers.kubernetesingress
         # ACME V2 supports wildcard certificates. As described in Let's Encrypt's post wildcard certificates can only be generated through a DNS-01 challenge.
@@ -50,9 +53,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: traefik-dashboard-service
+  name: traefik-dashboard
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 8080
     targetPort: dashboard
