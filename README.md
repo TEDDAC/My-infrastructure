@@ -8,6 +8,7 @@ Comme d'hab, je créer des repos avec pas grand chose dedans, mais là c'est pou
 
 - Funkwhale
 - Jupyter notebook
+- Supabase
 
 # Kubernetes Learning
 
