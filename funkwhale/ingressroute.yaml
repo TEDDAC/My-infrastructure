@@ -1,0 +1,16 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: funkwhale
+  namespace: default
+spec:
+  entryPoints:
+  - websecure
+  routes:
+  - match: Host(`funkwhale.altaif4.fr`)
+    kind: Rule
+    services:
+    - name: funkwhale
+      port: 80
+  tls:
+    certResolver: myresolver
